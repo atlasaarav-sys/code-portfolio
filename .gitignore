@@ -41,6 +41,10 @@ Release/
 coding/python/03_todo_cli_app/tasks.json
 coding/python/03_todo_cli_app/test_tasks.json
 coding/cpp/03_bank_system/accounts.txt
+projects/ai_telemetry_diagnostics/sample_data.csv
+projects/closed_loop_servo_pid/sim/step_response.csv
+projects/smart_energy_monitor_esp32/sim/energy_trace.csv
+projects/*/**/__pycache__/
 
 # --- tooling ---
 .claude/
