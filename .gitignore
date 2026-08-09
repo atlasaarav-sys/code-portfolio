@@ -1,0 +1,51 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# --- C / C++ ---
+*.o
+*.obj
+*.exe
+*.out
+*.a
+*.lib
+*.dll
+*.so
+build/
+cmake-build-*/
+*.exe.stackdump
+
+# --- KiCad ---
+*-backups/
+*.bak
+*.kicad_pcb-bak
+*.kicad_sch-bak
+_autosave-*
+fp-info-cache
+*.lck
+*.000
+*.net
+
+# --- PlatformIO / STM32CubeIDE ---
+.pio/
+.vscode/
+Debug/
+Release/
+*.launch
+
+# --- project runtime state (not source content) ---
+coding/python/03_todo_cli_app/tasks.json
+coding/python/03_todo_cli_app/test_tasks.json
+coding/cpp/03_bank_system/accounts.txt
+
+# --- tooling ---
+.claude/
+
+# --- OS / editor cruft ---
+.DS_Store
+Thumbs.db
+*.swp
