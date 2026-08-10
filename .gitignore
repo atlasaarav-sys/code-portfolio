@@ -46,6 +46,29 @@ projects/closed_loop_servo_pid/sim/step_response.csv
 projects/smart_energy_monitor_esp32/sim/energy_trace.csv
 projects/*/**/__pycache__/
 
+# cpp_advanced: built demo binaries (extensionless on Linux/Mac, .exe covered above)
+cpp_advanced/*/*_demo
+
+# python_apps: locally-created data files, not source content
+python_apps/*/expenses.db
+python_apps/*/shortener.db
+python_apps/*/vault.json
+python_apps/01_markdown_static_site_generator/output/
+
+# ml_computer_vision: generated demo images and downloaded/trained model artifacts
+ml_computer_vision/*/test_image.png
+ml_computer_vision/*/edges_output.png
+ml_computer_vision/*/segmented_output.png
+ml_computer_vision/*/detections_output.png
+ml_computer_vision/*/left.png
+ml_computer_vision/*/right.png
+ml_computer_vision/*/panorama_output.png
+ml_computer_vision/*/foreground_output.png
+ml_computer_vision/*/plate_crop.png
+ml_computer_vision/07_pytorch_cnn_classifier/data/
+ml_computer_vision/07_pytorch_cnn_classifier/*.pt
+ml_computer_vision/10_neural_style_transfer/stylized.jpg
+
 # --- tooling ---
 .claude/
 

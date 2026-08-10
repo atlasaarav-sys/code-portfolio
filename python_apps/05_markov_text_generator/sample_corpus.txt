@@ -1,0 +1,15 @@
+The quick engineer debugged the circuit board late into the night. The
+circuit board hummed quietly on the workbench while the oscilloscope traced
+a clean square wave. The engineer smiled and reached for another cup of
+coffee. Outside, the rain traced quiet patterns on the window while the lab
+computer compiled the firmware one more time. The firmware finally passed
+every test and the engineer saved the project before heading home. The
+project had taken three weeks longer than planned, but the final build was
+stable and the telemetry pipeline reported clean data from every sensor.
+The team celebrated with pizza and a short demo the next morning. The demo
+went smoothly and the client asked thoughtful questions about the sensor
+fusion algorithm. The algorithm combined readings from the accelerometer
+and the gyroscope to estimate orientation in real time. Real time systems
+demand careful attention to timing, and the engineer had learned that
+lesson the hard way during an earlier project. The earlier project taught
+the whole team to write better tests before shipping new firmware.

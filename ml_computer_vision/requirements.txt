@@ -1,0 +1,8 @@
+# Shared requirements for the OpenCV-based projects (03-05, 08-09).
+# Pinned to 4.10.0.84: opencv-python(-headless) 5.0.0's Python bindings were
+# missing cv2.CascadeClassifier and other objdetect/feature APIs when tested
+# (2026-08) -- 4.10 is the last known-good release for these bindings.
+numpy>=1.24
+Pillow>=10.0
+opencv-python-headless==4.10.0.84
+scikit-learn>=1.3
