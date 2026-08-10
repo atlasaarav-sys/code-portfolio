@@ -25,5 +25,5 @@ algorithms/data structures built from scratch.
 None of this is machine-compiled in the authoring environment (no C++
 toolchain installed there) — every project has a `Makefile` targeting
 g++/C++17; build locally (`make`) before relying on it. Code follows the
-same conventions as [`coding/cpp`](../coding/cpp): headers for reusable
+same conventions as [`software/cpp`](..): headers for reusable
 components, a `main.cpp` demo/test driver per project.

@@ -41,8 +41,8 @@ int main() {
     std::printf("Work-stealing pool (%zu workers): checksum=%ld, %.3f s\n",
                 NUM_WORKERS, total.load(),
                 std::chrono::duration<double>(elapsed).count());
-    std::printf("(Compare against cpp_advanced project's simpler single-queue pool in\n"
-                " projects/rpi_cluster_arduino_datacenter/scheduler for the shared-queue baseline.)\n");
+    std::printf("(Compare against this repo's simpler single-queue pool in\n"
+                " featured-projects/rpi_cluster_arduino_datacenter/scheduler for the shared-queue baseline.)\n");
 
     return 0;
 }
