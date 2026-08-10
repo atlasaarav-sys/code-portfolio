@@ -126,27 +126,6 @@ projects where the firmware is only half the story:
 - [closed_loop_servo_pid](hardware/embedded-projects/closed_loop_servo_pid) — portable C PID controller core (Arduino + STM32 HAL integration sketches) plus a Python simulator that validates the overshoot/settling-time improvement from closed-loop control vs. open-loop.
 - [rpi_cluster_arduino_datacenter](hardware/embedded-projects/rpi_cluster_arduino_datacenter) — C++ thread-pool task scheduler (stands in for a 5-node Pi cluster), Arduino sketches for remote device control and scheduled automation, and a Python cluster logging/diagnostics tool.
 
-## Hosting this site
-
-[software/portfolio-website](software/portfolio-website) auto-deploys to
-GitHub Pages via [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml)
-on every push (after a one-time Settings toggle — see that project's
-README). Free/cheap options if you want it somewhere other than GitHub
-Pages, roughly in order of "least setup":
-
-| Option | Cost | Custom domain | Notes |
-|---|---|---|---|
-| **GitHub Pages** (set up here) | Free | Yes, free (add a `CNAME` file) | Already wired up via Actions above; URL is `<username>.github.io/<repo>` unless you use a custom domain or a repo named `<username>.github.io` for a root URL |
-| **Cloudflare Pages** | Free | Yes, free | Fastest global CDN of this list; connect the GitHub repo, point the build at `software/portfolio-website`, no build command needed (it's static) |
-| **Netlify** | Free tier | Yes, free | Same GitHub-connected workflow as Cloudflare Pages; free tier is generous for a personal site |
-| **Vercel** | Free tier | Yes, free | Same idea again; slightly more geared toward JS frameworks but static sites work fine |
-| **A real domain name** | ~$9-15/yr | — | The hosting above is free either way — a domain (e.g. `aaravartham.dev`) is the only thing that actually costs money. Cloudflare Registrar sells at-cost (no markup) if you want one; point its DNS at whichever free host above you pick |
-
-For a personal portfolio like this, GitHub Pages (already configured) or
-Cloudflare Pages are the two I'd actually recommend — both are genuinely
-free with no bandwidth surprises, and both support a custom domain if you
-ever buy one.
-
 ## Getting started
 
 ```bash
