@@ -1,7 +1,8 @@
 # Hardware Projects
 
-Eight hardware projects, beginner to advanced, split across ESP32 and STM32.
-Each project folder contains a single `README.md` with three sections:
+Nine hardware projects, beginner to advanced, across ESP32, STM32, and
+Arduino. Each project folder contains a single `README.md` with three
+sections:
 
 1. **Schematic (component/connection list)** — every part, its value/part
    number, and exactly what pin connects to what. This is what you'd
@@ -32,6 +33,18 @@ decoupling) before ordering boards.
 | 2 | [Dual Motor Driver Board](stm32/02_motor_driver_board/README.md) | Intermediate | STM32F401, DRV8833 dual H-bridge, quadrature encoder inputs |
 | 3 | [USB Data Acquisition Board](stm32/03_usb_daq_board/README.md) | Intermediate-Advanced | STM32F405, USB FS, microSD logging, multi-channel ADC front end |
 | 4 | [CAN + USB-C Sensor Hub](stm32/04_can_sensor_hub/README.md) | Advanced | STM32F405, CAN transceiver, USB-C (PD-negotiated 5V), multi-sensor |
+
+## Arduino track
+
+| # | Project | Level | Highlights |
+|---|---|---|---|
+| 1 | [Motion-Tracking Pan-Tilt Camera Rig](arduino/01_motion_tracking_pan_tilt_camera/README.md) | Beginner-Intermediate | Arduino Uno + 2 servos, OpenCV background-subtraction tracking, PC-to-Arduino serial control |
+
+This one's a rebuild of code I was given (`motion_tracker.py` +
+`pan_tilt_controller.ino`) rather than something designed from scratch —
+the README documents the actual wiring those files assume, plus an
+optional servo breakout shield PCB on top of the base Uno-and-jumper-wires
+build.
 
 ## KiCad files
 

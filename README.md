@@ -1,7 +1,7 @@
 # Aarav Artham — Coding & Hardware Portfolio
 
 Personal practice repo combining software (Python / C / C++) and hardware
-(ESP32 / STM32) projects, organized from beginner to advanced.
+(ESP32 / STM32 / Arduino) projects, organized from beginner to advanced.
 
 ## Structure
 
@@ -13,6 +13,7 @@ coding/
 hardware/
   esp32/     4 projects, beginner -> advanced (schematics, PCB plan, BOM)
   stm32/     4 projects, beginner -> advanced (schematics, PCB plan, BOM)
+  arduino/   1 project (motion-tracking pan-tilt camera rig)
 projects/
   ai_telemetry_diagnostics/        Python + LLM telemetry diagnostics pipeline
   closed_loop_servo_pid/           embedded PID servo control (C firmware + sim)
@@ -34,9 +35,10 @@ template (see `TEMPLATE_README.md`).
 
 ## Hardware projects
 
-See [hardware/esp32](hardware/esp32) and [hardware/stm32](hardware/stm32) for
-full write-ups. Each includes a component/connection list (schematic), a PCB
-layout plan (placement, routing, stackup), and a bill of materials.
+See [hardware/esp32](hardware/esp32), [hardware/stm32](hardware/stm32), and
+[hardware/arduino](hardware/arduino) for full write-ups. Each includes a
+component/connection list (schematic), a PCB layout plan (placement,
+routing, stackup), and a bill of materials.
 
 ## Resume projects
 
