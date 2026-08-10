@@ -16,10 +16,12 @@ cpp/
 machine-learning/
   computer-vision/                                           <- 10 classical CV + deep learning projects
 misc-projects/                                                <- 5 projects: REST API, CLI tool, full-stack app, DSA+tests, Dockerized CI/CD
+portfolio-website/                                            <- personal portfolio site (single-file HTML/CSS/JS)
 ```
 
 See [python/apps/README.md](python/apps/README.md),
 [cpp/advanced/README.md](cpp/advanced/README.md),
 [machine-learning/computer-vision/README.md](machine-learning/computer-vision/README.md),
-and [misc-projects/README.md](misc-projects/README.md) for the deeper
+[misc-projects/README.md](misc-projects/README.md), and
+[portfolio-website/README.md](portfolio-website/README.md) for the deeper
 tracks.

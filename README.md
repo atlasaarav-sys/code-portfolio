@@ -21,6 +21,7 @@ software/
   machine-learning/
     computer-vision/                                              (10 projects)
   misc-projects/                                                   (5 projects: REST API, CLI, full-stack, DSA, CI/CD)
+  portfolio-website/                                               (personal portfolio site, single-file HTML/CSS/JS)
 
 hardware/
   esp32/               9 projects, beginner -> advanced (GPIO/I2C/SPI/UART/WiFi/MQTT/BLE)
@@ -94,6 +95,11 @@ real, actually-run test suite:
 | [03_fullstack_bookmarks_app](software/misc-projects/03_fullstack_bookmarks_app) | Multi-user bookmarks app with session auth | Python, Flask, SQLite, Docker |
 | [04_algorithms_toolkit](software/misc-projects/04_algorithms_toolkit) | Sorting/searching/graph algorithms with tests + empirical benchmark | Python, `unittest` |
 | [05_dockerized_url_monitor](software/misc-projects/05_dockerized_url_monitor) | Uptime monitor with a live status page | Python, Docker, GitHub Actions |
+
+**[software/portfolio-website](software/portfolio-website)** — this
+portfolio's own personal site: a single-file, dark-themed, mobile-first
+HTML/CSS/JS page (Home/About/Projects, smooth-scroll nav, scroll-reveal
+animation) with no build step or framework.
 
 ## Hardware
 
