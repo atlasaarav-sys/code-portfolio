@@ -83,9 +83,16 @@ runs off a single-cell LiPo with USB charging.
 | 4 | C1-C4 | 4.7uF-10uF ceramic | 0805 | Digi-Key 490-6560-1-ND |
 | 1 | Battery | 1S LiPo, JST-PH | 500-1000mAh pouch cell | Adafruit/SparkFun LiPo |
 
-## Firmware note
+## Firmware
 
-Poll BME280 over I2C every N seconds, render to the OLED, and use
-`esp_deep_sleep_start()` between reads with SW4 wired to an RTC GPIO for a
-wake button — this is the natural "advanced firmware" extension once the
-board works.
+[`firmware/environmental_logger.ino`](firmware/environmental_logger.ino)
+— Arduino framework. Reads the BME280 over I2C, renders to the OLED, then
+deep-sleeps for 60s (or until SW4 wakes it early via `ext0` interrupt).
+Requires the "Adafruit BME280 Library" + "Adafruit Unified Sensor" +
+"Adafruit SSD1306" + "Adafruit GFX Library" from the Arduino Library
+Manager.
+
+**Status:** written and reviewed, not flashed/compiled here (no BME280 +
+OLED + ESP32 board on hand in this environment). The Adafruit library
+calls and deep-sleep/wake API usage are standard, current patterns — worth
+a bench check on real hardware before trusting the sleep-current numbers.

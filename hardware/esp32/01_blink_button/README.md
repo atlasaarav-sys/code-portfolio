@@ -81,8 +81,15 @@ world" board — the reference every later board in this track builds on.
 | 3 | SW1-SW3 | Tactile switch 6x6mm | SMD | Digi-Key 450-1650-ND |
 | 1 | J2 | 2-pin header 2.54mm | THT | Digi-Key any |
 
-## Firmware note
+## Firmware
 
-This board is a plain ESP32 dev board — program it with the Arduino IDE or
-ESP-IDF; a blink + button-triggers-blink-toggle sketch is the natural first
-firmware to run on it.
+[`firmware/blink_button.ino`](firmware/blink_button.ino) — Arduino
+framework. Debounces the user button (GPIO4) and toggles the user LED
+(GPIO2) on each press, logging state changes over serial. Flash with the
+Arduino IDE (ESP32 board package) or `arduino-cli compile --fqbn
+esp32:esp32:esp32`.
+
+**Status:** written and reviewed, not flashed to real hardware or
+compiled in this environment (no ESP32 board/toolchain attached here) —
+straightforward enough that I'd expect it to just work, but verify before
+relying on it.

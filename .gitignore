@@ -69,6 +69,11 @@ machine-learning/computer-vision/07_pytorch_cnn_classifier/data/
 machine-learning/computer-vision/07_pytorch_cnn_classifier/*.pt
 machine-learning/computer-vision/10_neural_style_transfer/stylized.jpg
 
+# misc-projects: locally-created data files, not source content
+misc-projects/01_rest_api_notes_crud/notes.db
+misc-projects/03_fullstack_bookmarks_app/bookmarks.db
+misc-projects/05_dockerized_url_monitor/monitor.db
+
 # --- tooling ---
 .claude/
 

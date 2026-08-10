@@ -75,9 +75,16 @@ brought to 0.1" headers.
 | 6 | R1-R6 | 330R-10k assorted | 0603 | Digi-Key any 0603 |
 | 8 | C1-C8 | 20pF/100nF/10uF assorted | 0603/0805 | Digi-Key per value |
 
-## Firmware note
+## Firmware
 
-Program via SWD with an ST-Link (J2) or via UART bootloader (BOOT0 high).
-Blink PC13, poll PA0 for the button — this board is the reference platform
-every later STM32 board in this track reuses (crystal circuit, SWD header,
-reset RC network).
+[`firmware/main.c`](firmware/main.c) — STM32 HAL, structured for a
+CubeMX-generated STM32F103C8T6 project. Debounced-polls the user button
+(PA0) and blinks the active-low user LED (PC13), with the button toggling
+between two blink rates. `MX_GPIO_Init()` (pin mode/clock config) is left
+as CubeMX boilerplate since it's board-config-specific; the polling loop
+is the actual firmware logic. Program via SWD with an ST-Link (J2).
+
+**Status:** written and reviewed, not compiled/flashed here (no
+STM32CubeIDE project scaffold or ST-Link attached in this environment) —
+this is the reference platform every later STM32 board in this track
+builds on, so it's worth actually bringing up first.

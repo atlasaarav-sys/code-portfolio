@@ -97,9 +97,19 @@ reference for accurate ADC readings.
 | ~20 | R1-R18 | Assorted 1k-47k | 0603 | Digi-Key any 0603 |
 | ~10 | C1-C9 | Assorted 20pF-10uF | 0603/0805 | Digi-Key per value |
 
-## Firmware note
+## Firmware
 
-USB CDC (virtual COM) or USB composite CDC+MSC for live streaming, DMA-fed
-ADC sampling triggered by a timer for consistent sample rate, SDIO+FatFs
-for on-board logging — this board is a good "systems" project pairing
-analog design care with USB/DMA/filesystem firmware.
+[`firmware/main.c`](firmware/main.c) — STM32 HAL + USB-CDC + FatFs
+middleware, structured for a CubeMX-generated STM32F405 project. DMA-fed
+ADC sampling (4 channels, timer-triggered) with a completion callback that
+formats each block as CSV, streams it live over USB-CDC, and appends it to
+`daq_log.csv` on the SD card via FatFs. Peripheral/middleware init
+(`MX_ADC1_Init`, `MX_USB_DEVICE_Init`, `MX_FATFS_Init`, etc.) is CubeMX
+boilerplate, left as comments — the DMA callback and dual-path logging
+logic is the real content.
+
+**Status:** written and reviewed, not compiled/flashed here (needs a real
+CubeMX project with USB_DEVICE/FATFS middleware enabled to even build, and
+no STM32F405/ADC front-end hardware in this environment) — this is the
+most middleware-dependent firmware in the STM32 track; get ADC-DMA alone
+working first, then layer in USB and SD separately.

@@ -104,9 +104,19 @@ multiple sensor interfaces (I2C + SPI), and an SD card — a general-purpose
 | ~15 | R1-R12 | Assorted resistors | 0603 | Digi-Key any 0603 |
 | ~10 | C1-C7 | Assorted caps | 0603/0805 | Digi-Key per value |
 
-## Firmware note
+## Firmware
 
-STM32 bxCAN peripheral for the bus interface, USB-CDC for a local debug
-console, SDIO+FatFs for logging, I2C/SPI drivers for the sensor headers —
-this board's firmware is effectively "STM32-02 + STM32-03's peripherals,
-plus a CAN stack," which is why it's the capstone of the track.
+[`firmware/main.c`](firmware/main.c) — STM32 HAL + bxCAN + USB-CDC,
+structured for a CubeMX-generated STM32F405 project. Reads the ICM-42688-P
+IMU over I2C at 50Hz, broadcasts each reading as a standard CAN frame
+(`HAL_CAN_AddTxMessage`), and mirrors the same data to a USB-CDC debug
+console. Peripheral/middleware init (`MX_CAN1_Init`, `MX_I2C1_Init`,
+`MX_USB_DEVICE_Init`) is CubeMX boilerplate, left as comments — the CAN
+framing and I2C read logic is the real content.
+
+**Status:** written and reviewed, not compiled/flashed here (needs a real
+CubeMX bxCAN+USB_DEVICE project to build, and no CAN transceiver/IMU
+hardware or a second CAN node to test against in this environment) — CAN
+bus work specifically needs a second node (or a USB-CAN adapter + candump)
+to verify frames are actually landing on the bus correctly, which isn't
+something to skip before trusting this.

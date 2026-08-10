@@ -1,0 +1,3 @@
+# stdlib only -- no third-party packages needed. This file exists so the
+# CI workflow and Dockerfile have a consistent `pip install -r requirements.txt`
+# step even though it currently installs nothing.

@@ -89,9 +89,20 @@ regulated logic rail.
 | ~10 | R1-R10 | 330R-10k assorted | 0603 | Digi-Key any 0603 |
 | ~8 | C1-C8 | 10pF-22uF assorted | 0603/0805 | Digi-Key per value |
 
-## Firmware note
+## Firmware
 
-TIM1 in complementary PWM mode drives the H-bridge inputs; TIM2/TIM4 in
-encoder mode read quadrature counts directly in hardware. A PID loop
-closing position/velocity from the encoder counts to the PWM duty cycle is
-the natural firmware target once open-loop motor control works.
+[`firmware/main.c`](firmware/main.c) — STM32 HAL, structured for a
+CubeMX-generated STM32F401 project. Open-loop PWM speed/direction control
+for both motors via TIM1's 4 PWM channels, quadrature position read from
+TIM2/TIM4 in hardware encoder mode, plus E-stop button and DRV8833
+nFAULT handling. Peripheral init (`MX_TIM1_Init`, etc.) is CubeMX
+boilerplate, left as comments; the control/readback logic is real. Wiring
+the encoder counts into a PID loop (position or velocity) is the natural
+next step — this file stops at open-loop + readback, same as [the
+closed-loop PID project](../../../featured-projects/closed_loop_servo_pid)
+in this repo, which is the piece to reuse for that.
+
+**Status:** written and reviewed, not compiled/flashed here (no
+STM32F401/DRV8833/encoder hardware in this environment) — verify the
+`setMotorSpeed` sign convention against your actual DRV8833 wiring before
+trusting "forward" vs "reverse."

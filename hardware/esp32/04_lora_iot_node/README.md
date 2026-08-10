@@ -100,10 +100,19 @@ RF and careful power-domain design.
 | 1 | Battery | 1S LiPo | 500-2000mAh | Adafruit/SparkFun LiPo |
 | 1 | Antenna | 868/915MHz whip, U.FL | — | Digi-Key/generic LoRa antenna |
 
-## Firmware note
+## Firmware
 
-Deep sleep between reads (turn off 3V3_SENSORS via U4, wake on timer or
-SW1), read sensors, transmit a small payload over LoRa, sleep again — the
-power budget is dominated by radio TX time and sleep-current leakage, which
-is exactly why the switched sensor rail and buck-boost regulator earn their
-keep on this board.
+[`firmware/lora_sensor_node.ino`](firmware/lora_sensor_node.ino) —
+Arduino framework. On each wake: powers up the switched sensor rail,
+reads BME280 + BH1750 over I2C, transmits a compact text payload over
+LoRa, powers the sensor rail back down, and deep-sleeps for 5 minutes (or
+wakes early on SW1). Requires "Adafruit BME280 Library" + "Adafruit
+Unified Sensor", "BH1750" (Christopher Laws), and "LoRa"
+(sandeepmistry/arduino-LoRa) from the Library Manager. Set
+`LORA_FREQUENCY` to your region's ISM band.
+
+**Status:** written and reviewed, not flashed/compiled here (no
+LoRa/BME280/BH1750 hardware in this environment). The sensor-rail power
+sequencing (enable -> settle -> read -> disable -> sleep) is the part
+worth scope-checking on real hardware first — that's exactly the failure
+mode this design is trying to avoid.

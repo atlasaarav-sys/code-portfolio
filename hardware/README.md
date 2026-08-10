@@ -1,50 +1,81 @@
 # Hardware Projects
 
-Nine hardware projects, beginner to advanced, across ESP32, STM32, and
-Arduino. Each project folder contains a single `README.md` with three
-sections:
+Seventeen hardware projects, beginner to advanced, across ESP32, STM32,
+and Arduino. Each project folder contains a `README.md` covering:
 
 1. **Schematic (component/connection list)** — every part, its value/part
    number, and exactly what pin connects to what. This is what you'd
    translate into a KiCad schematic sheet.
 2. **PCB layout plan** — placement strategy, routing notes (trace widths,
-   keepouts, decoupling placement), and layer stackup.
+   keepouts, decoupling placement), and layer stackup. (Projects 05-08 in
+   the ESP32 track are breadboard/module builds documented with a wiring
+   table instead — no custom PCB, so no layout plan section.)
 3. **Bill of materials** — a table with part, value/footprint, qty, and a
    typical distributor part number (Digi-Key/Mouser/LCSC) you can search.
+4. **Firmware** — every project now has real source code in a `firmware/`
+   subfolder (see the status note below).
 
-None of these have been fabricated or bench-tested — treat them as a solid
-first-pass design to build in KiCad and review (especially power budgets and
-decoupling) before ordering boards.
+None of these boards have been fabricated or bench-tested — treat the
+designs as a solid first-pass to build in KiCad and review (especially
+power budgets and decoupling) before ordering boards. Firmware is written
+and reviewed but not flashed/compiled in this environment (no matching
+board/toolchain attached) — each README's Firmware section says exactly
+what to verify before trusting it on real hardware.
 
 ## ESP32 track (beginner -> advanced)
 
-| # | Project | Level | Highlights |
-|---|---|---|---|
-| 1 | [Blink + Button Dev Board](esp32/01_blink_button/README.md) | Beginner | Bare ESP32-WROOM-32 board, USB-UART, one LED, one button |
-| 2 | [Environmental Logger](esp32/02_environmental_logger/README.md) | Beginner-Intermediate | I2C BME280 + OLED, LiPo charging, on/off switch |
-| 3 | [WiFi Weather Station](esp32/03_wifi_weather_station/README.md) | Intermediate | TFT display, RTC, microSD logging, WiFi |
-| 4 | [LoRa IoT Sensor Node](esp32/04_lora_iot_node/README.md) | Advanced | LoRa radio, multi-sensor, deep-sleep power management, USB-C |
+| # | Project | Level | Protocol focus | Highlights |
+|---|---|---|---|---|
+| 1 | [Blink + Button Dev Board](esp32/01_blink_button/README.md) | Beginner | GPIO | Bare ESP32-WROOM-32 board, USB-UART, one LED, one button |
+| 2 | [Environmental Logger](esp32/02_environmental_logger/README.md) | Beginner-Intermediate | **I2C** | BME280 + OLED, LiPo charging, deep sleep |
+| 3 | [WiFi Weather Station](esp32/03_wifi_weather_station/README.md) | Intermediate | SPI + I2C + **WiFi** | TFT display, DS3231 RTC, microSD logging, NTP sync |
+| 4 | [LoRa IoT Sensor Node](esp32/04_lora_iot_node/README.md) | Advanced | SPI + I2C | LoRa radio, multi-sensor, deep-sleep power management |
+| 5 | [UART GPS Logger](esp32/05_uart_gps_logger/README.md) | Intermediate | **UART** | NMEA parsing, OLED live fix, LittleFS track log |
+| 6 | [SPI SD Card Data Logger](esp32/06_spi_sd_data_logger/README.md) | Intermediate | **SPI** | BME280 + microSD CSV logging, start/stop button |
+| 7 | [WiFi/MQTT Telemetry Node](esp32/07_wifi_mqtt_telemetry_node/README.md) | Intermediate | **WiFi + MQTT** | Publishes sensor JSON, subscribes to remote relay control |
+| 8 | [BLE Sensor Beacon](esp32/08_ble_sensor_beacon/README.md) | Intermediate | **BLE** | GATT notify characteristic + remote LED control, testable via nRF Connect |
+
+Projects 5-8 were added specifically to round out protocol coverage (UART,
+SPI, WiFi/MQTT, BLE) — see [Protocol diversity](#protocol-diversity) below.
 
 ## STM32 track (beginner -> advanced)
 
-| # | Project | Level | Highlights |
-|---|---|---|---|
-| 1 | [Blue Pill Style Dev Board](stm32/01_blue_pill_dev_board/README.md) | Beginner | STM32F103C8T6, SWD header, LED, button, 3.3V reg |
-| 2 | [Dual Motor Driver Board](stm32/02_motor_driver_board/README.md) | Intermediate | STM32F401, DRV8833 dual H-bridge, quadrature encoder inputs |
-| 3 | [USB Data Acquisition Board](stm32/03_usb_daq_board/README.md) | Intermediate-Advanced | STM32F405, USB FS, microSD logging, multi-channel ADC front end |
-| 4 | [CAN + USB-C Sensor Hub](stm32/04_can_sensor_hub/README.md) | Advanced | STM32F405, CAN transceiver, USB-C (PD-negotiated 5V), multi-sensor |
+| # | Project | Level | Protocol focus | Highlights |
+|---|---|---|---|---|
+| 1 | [Blue Pill Style Dev Board](stm32/01_blue_pill_dev_board/README.md) | Beginner | GPIO | STM32F103C8T6, SWD header, LED, button, 3.3V reg |
+| 2 | [Dual Motor Driver Board](stm32/02_motor_driver_board/README.md) | Intermediate | PWM/Timer | STM32F401, DRV8833 dual H-bridge, quadrature encoder inputs |
+| 3 | [USB Data Acquisition Board](stm32/03_usb_daq_board/README.md) | Intermediate-Advanced | SDIO + **USB** | STM32F405, DMA-fed ADC, microSD logging, USB-CDC streaming |
+| 4 | [CAN + USB-C Sensor Hub](stm32/04_can_sensor_hub/README.md) | Advanced | **CAN** + I2C | STM32F405, CAN transceiver, IMU, USB-C debug console |
 
 ## Arduino track
 
-| # | Project | Level | Highlights |
-|---|---|---|---|
-| 1 | [Motion-Tracking Pan-Tilt Camera Rig](arduino/01_motion_tracking_pan_tilt_camera/README.md) | Beginner-Intermediate | Arduino Uno + 2 servos, OpenCV background-subtraction tracking, PC-to-Arduino serial control |
+| # | Project | Level | Protocol focus | Highlights |
+|---|---|---|---|---|
+| 1 | [Motion-Tracking Pan-Tilt Camera Rig](arduino/01_motion_tracking_pan_tilt_camera/README.md) | Beginner-Intermediate | Serial (USB) | Arduino Uno + 2 servos, OpenCV background-subtraction tracking, PC-to-Arduino serial control |
 
 This one's a rebuild of code I was given (`motion_tracker.py` +
 `pan_tilt_controller.ino`) rather than something designed from scratch —
 the README documents the actual wiring those files assume, plus an
 optional servo breakout shield PCB on top of the base Uno-and-jumper-wires
 build.
+
+## Protocol diversity
+
+Across the flagship set of projects, every protocol the portfolio audit
+asked for is represented by at least one project, with no repeats needed:
+
+| Protocol | Project |
+|---|---|
+| I2C | [ESP32-02 Environmental Logger](esp32/02_environmental_logger/README.md) — BME280 + OLED |
+| UART | [ESP32-05 GPS Logger](esp32/05_uart_gps_logger/README.md) — NMEA sentence parsing |
+| SPI | [ESP32-06 SD Card Data Logger](esp32/06_spi_sd_data_logger/README.md) — microSD over SPI |
+| WiFi/MQTT | [ESP32-07 WiFi/MQTT Telemetry Node](esp32/07_wifi_mqtt_telemetry_node/README.md) |
+| BLE | [ESP32-08 BLE Sensor Beacon](esp32/08_ble_sensor_beacon/README.md) — GATT notify characteristic |
+| CAN | [STM32-04 CAN Sensor Hub](stm32/04_can_sensor_hub/README.md) — bxCAN broadcast |
+
+(Several other projects layer in additional protocols on top of their
+main focus — e.g. ESP32-03 uses SPI *and* I2C *and* WiFi, STM32-03 uses
+SDIO and USB — see each project's own table for the full picture.)
 
 ## KiCad files
 
@@ -58,8 +89,8 @@ without iterating in the live schematic editor. Rather than hand you a file
 that opens in KiCad and *looks* legit but is subtly wrong, I dropped that
 approach.
 
-Practical path instead: every project's component/connection list below
-already gives you the exact part, value, and pin mapping — that's normally
-a 20-60 minute job to lay out directly in KiCad's schematic editor per
-board, and you'll end up with a schematic you've actually verified yourself
-rather than one generated blind.
+Practical path instead: every custom-PCB project's component/connection
+list already gives you the exact part, value, and pin mapping — that's
+normally a 20-60 minute job to lay out directly in KiCad's schematic
+editor per board, and you'll end up with a schematic you've actually
+verified yourself rather than one generated blind.

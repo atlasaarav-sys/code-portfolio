@@ -1,9 +1,10 @@
 # Aarav Artham — Coding & Hardware Portfolio
 
 Personal practice repo combining software (Python / C / C++), machine
-learning / computer vision, hardware (ESP32 / STM32 / Arduino), and a set
-of featured projects rebuilding my resume's Project Experience entries as
-working prototypes.
+learning / computer vision, hardware (ESP32 / STM32 / Arduino), a set of
+featured projects rebuilding my resume's Project Experience entries as
+working prototypes, and a handful of misc projects covering REST APIs,
+CLI tooling, full-stack web, algorithms, and CI/CD.
 
 ## Structure
 
@@ -17,8 +18,8 @@ machine-learning/
   computer-vision/   10 projects: classical CV (tested) + deep learning (written, untested)
 
 hardware/
-  esp32/        4 projects, beginner -> advanced (schematics, PCB plan, BOM)
-  stm32/        4 projects, beginner -> advanced (schematics, PCB plan, BOM)
+  esp32/        8 projects, beginner -> advanced (I2C/UART/SPI/WiFi-MQTT/BLE)
+  stm32/        4 projects, beginner -> advanced (PWM/USB/CAN)
   arduino/      1 project (motion-tracking pan-tilt camera rig)
 
 featured-projects/
@@ -26,6 +27,13 @@ featured-projects/
   closed_loop_servo_pid/           embedded PID servo control (C firmware + sim)
   rpi_cluster_arduino_datacenter/  C++ task scheduler + Arduino device control/automation
   smart_energy_monitor_esp32/      ESP32 energy monitoring + relay optimization
+
+misc-projects/
+  01_rest_api_notes_crud/          Flask + SQLite CRUD REST API
+  02_cli_git_changelog/            git-log-to-CHANGELOG.md CLI tool
+  03_fullstack_bookmarks_app/      Flask + SQLite + auth + Docker
+  04_algorithms_toolkit/           sorting/searching/graph algorithms + tests + benchmark
+  05_dockerized_url_monitor/       Dockerized service + GitHub Actions CI/CD
 ```
 
 Each project folder has its own `README.md` with a description, what it
@@ -44,13 +52,23 @@ difficulty (basics/syntax -> data structures -> a small app):
 | C++ | basics/syntax (OOP) | data structures (templates, smart ptrs) | bank account system (classes, files) |
 
 **[software/python/apps](software/python/apps)** — 10 real applications
-using only the Python standard library: a Markdown static site generator,
-a SQLite expense tracker, a file deduplicator, a URL shortener REST
-service, a Markov text generator, a Redis-like key-value store server,
-socket-based tic-tac-toe, an encrypted password manager CLI, an RSS feed
-aggregator, and a threaded chat server. All 10 were actually run
-(including starting servers and driving them with scripted clients) while
-building this repo.
+using only the Python standard library:
+
+| Project | Tech tags |
+|---|---|
+| Markdown static site generator | Python, stdlib |
+| SQLite expense tracker | Python, SQLite |
+| File deduplicator | Python, hashlib |
+| URL shortener REST service | Python, `http.server`, SQLite |
+| Markov text generator | Python, stdlib |
+| Redis-like key-value store server | Python, sockets, threading |
+| Socket-based tic-tac-toe | Python, sockets, threading |
+| Encrypted password manager CLI | Python, PBKDF2/HMAC |
+| RSS feed aggregator | Python, `urllib`, `xml.etree` |
+| Threaded chat server | Python, sockets, threading |
+
+All 10 were actually run (including starting servers and driving them
+with scripted clients) while building this repo.
 
 **[software/cpp/advanced](software/cpp/advanced)** — 10 systems-level
 C++17 projects: a pool allocator, a lock-free SPSC ring buffer, a
@@ -75,10 +93,20 @@ this environment) — each README says exactly which category it's in.
 
 ## Hardware
 
-See [hardware/esp32](hardware/esp32), [hardware/stm32](hardware/stm32), and
-[hardware/arduino](hardware/arduino) for full write-ups. Each includes a
-component/connection list (schematic), a PCB layout plan (placement,
-routing, stackup), and a bill of materials.
+Seventeen projects across ESP32, STM32, and Arduino — see
+[hardware/README.md](hardware/README.md) for the full index, per-project
+protocol tags, a protocol-diversity map (I2C/UART/SPI/WiFi-MQTT/BLE/CAN,
+one flagship project per protocol, no repeats), and firmware status notes.
+Every project has a component/connection list, most have a PCB layout
+plan + BOM, and **every project now has real firmware source code** in a
+`firmware/` subfolder (written and reviewed, not flashed/compiled in this
+environment — see each README's Firmware section for specifics).
+
+| Track | Projects | Protocols covered |
+|---|---|---|
+| [ESP32](hardware/esp32) | 8 (beginner -> advanced) | GPIO, I2C, SPI, WiFi, WiFi+MQTT, UART, BLE |
+| [STM32](hardware/stm32) | 4 (beginner -> advanced) | GPIO, PWM/Timer, SDIO+USB, CAN+I2C |
+| [Arduino](hardware/arduino) | 1 | Serial (USB), OpenCV motion tracking |
 
 ## Featured projects
 
@@ -90,6 +118,20 @@ just a description):
 - [closed_loop_servo_pid](featured-projects/closed_loop_servo_pid) — portable C PID controller core (Arduino + STM32 HAL integration sketches) plus a Python simulator that validates the overshoot/settling-time improvement from closed-loop control vs. open-loop.
 - [rpi_cluster_arduino_datacenter](featured-projects/rpi_cluster_arduino_datacenter) — C++ thread-pool task scheduler (stands in for a 5-node Pi cluster), Arduino sketches for remote device control and scheduled automation, and a Python cluster logging/diagnostics tool.
 - [smart_energy_monitor_esp32](featured-projects/smart_energy_monitor_esp32) — ESP32 firmware reading light/temperature, filtering + hysteresis decision logic driving a relay, OLED display, and a Python simulator quantifying the false-trigger reduction and estimated energy savings.
+
+## Misc projects
+
+**[misc-projects/](misc-projects)** — five projects covering the
+fundamentals employers screen for day-to-day, each with a real,
+actually-run test suite:
+
+| Project | One-liner | Tech tags |
+|---|---|---|
+| [01_rest_api_notes_crud](misc-projects/01_rest_api_notes_crud) | Full CRUD REST API for a notes resource | Python, Flask, SQLite |
+| [02_cli_git_changelog](misc-projects/02_cli_git_changelog) | Generates a grouped CHANGELOG.md from git log | Python, stdlib, Conventional Commits |
+| [03_fullstack_bookmarks_app](misc-projects/03_fullstack_bookmarks_app) | Multi-user bookmarks app with session auth | Python, Flask, SQLite, Docker |
+| [04_algorithms_toolkit](misc-projects/04_algorithms_toolkit) | Sorting/searching/graph algorithms with tests + empirical benchmark | Python, `unittest` |
+| [05_dockerized_url_monitor](misc-projects/05_dockerized_url_monitor) | Uptime monitor with a live status page | Python, Docker, GitHub Actions |
 
 ## Getting started
 
@@ -103,3 +145,6 @@ the project README).
 
 C/C++ projects: each folder has a `Makefile`; run `make` then run the
 produced binary.
+
+Arduino/ESP32/STM32 firmware: each `firmware/` folder README says which
+libraries/toolchain to install and how to flash it.

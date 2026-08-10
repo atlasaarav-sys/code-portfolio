@@ -91,8 +91,19 @@ powered via USB (no battery).
 | 3 | C1-C3 | 10uF/100nF ceramic | 0805/0603 | Digi-Key per value |
 | 1 | C4 | 100nF ceramic | 0603 | Digi-Key 311-1141-1-ND |
 
-## Firmware note
+## Firmware
 
-WiFi (NTP time sync) + DS3231 (offline timekeeping) + microSD logging
-(CSV of readings) + TFT dashboard is a natural "systems integration"
-firmware project once each subsystem is bring-up tested individually.
+[`firmware/weather_station.ino`](firmware/weather_station.ino) — Arduino
+framework. Connects to WiFi, syncs the DS3231 RTC from NTP, draws a
+date/time + connection-status dashboard on the ILI9341, and appends a CSV
+timestamp to `/weather_log.csv` on the SD card once a minute. Falls back
+to RTC-only timekeeping if WiFi isn't available. Requires "Adafruit
+ILI9341", "Adafruit GFX Library", and "RTClib" from the Library Manager
+(`SD`/`WiFi` ship with the ESP32 core). Set `WIFI_SSID`/`WIFI_PASSWORD`
+before flashing.
+
+**Status:** written and reviewed, not flashed/compiled here (no TFT/SD/RTC
+hardware or WiFi-capable board attached in this environment) — this is the
+most subsystem-heavy firmware in the ESP32 track (shared SPI bus, I2C,
+WiFi, SD), so budget real bring-up time testing each piece individually
+before trusting the integrated dashboard.
