@@ -99,7 +99,7 @@ nFAULT handling. Peripheral init (`MX_TIM1_Init`, etc.) is CubeMX
 boilerplate, left as comments; the control/readback logic is real. Wiring
 the encoder counts into a PID loop (position or velocity) is the natural
 next step — this file stops at open-loop + readback, same as [the
-closed-loop PID project](../../../featured-projects/closed_loop_servo_pid)
+closed-loop PID project](../../embedded-projects/closed_loop_servo_pid)
 in this repo, which is the piece to reuse for that.
 
 **Status:** written and reviewed, not compiled/flashed here (no

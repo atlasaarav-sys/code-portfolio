@@ -1,39 +1,32 @@
 # Aarav Artham — Coding & Hardware Portfolio
 
-Personal practice repo combining software (Python / C / C++), machine
-learning / computer vision, hardware (ESP32 / STM32 / Arduino), a set of
-featured projects rebuilding my resume's Project Experience entries as
-working prototypes, and a handful of misc projects covering REST APIs,
-CLI tooling, full-stack web, algorithms, and CI/CD.
+Personal practice repo, organized into exactly two top-level categories —
+**software** and **hardware** — covering language fundamentals, deeper
+software tracks (systems C++, real applications, machine learning/computer
+vision), and embedded firmware/board designs for ESP32, STM32, and
+Arduino.
 
 ## Structure
 
 ```
 software/
-  python/       01_basics_syntax -> 02_data_structures -> 03_todo_cli_app, plus apps/ (10 real stdlib apps)
-  c/            01_basics_syntax -> 02_data_structures -> 03_mini_shell
-  cpp/          01_basics_syntax -> 02_data_structures -> 03_bank_system, plus advanced/ (10 systems-level projects)
-
-machine-learning/
-  computer-vision/   10 projects: classical CV (tested) + deep learning (written, untested)
+  python/
+    01_basics_syntax -> 02_data_structures -> 03_todo_cli_app   (fundamentals)
+    apps/                                                        (11 real applications)
+  c/
+    01_basics_syntax -> 02_data_structures -> 03_mini_shell      (fundamentals)
+  cpp/
+    01_basics_syntax -> 02_data_structures -> 03_bank_system     (fundamentals)
+    advanced/                                                     (10 systems-level projects)
+  machine-learning/
+    computer-vision/                                              (10 projects)
+  misc-projects/                                                   (5 projects: REST API, CLI, full-stack, DSA, CI/CD)
 
 hardware/
-  esp32/        8 projects, beginner -> advanced (I2C/UART/SPI/WiFi-MQTT/BLE)
-  stm32/        4 projects, beginner -> advanced (PWM/USB/CAN)
-  arduino/      1 project (motion-tracking pan-tilt camera rig)
-
-featured-projects/
-  ai_telemetry_diagnostics/        Python + LLM telemetry diagnostics pipeline
-  closed_loop_servo_pid/           embedded PID servo control (C firmware + sim)
-  rpi_cluster_arduino_datacenter/  C++ task scheduler + Arduino device control/automation
-  smart_energy_monitor_esp32/      ESP32 energy monitoring + relay optimization
-
-misc-projects/
-  01_rest_api_notes_crud/          Flask + SQLite CRUD REST API
-  02_cli_git_changelog/            git-log-to-CHANGELOG.md CLI tool
-  03_fullstack_bookmarks_app/      Flask + SQLite + auth + Docker
-  04_algorithms_toolkit/           sorting/searching/graph algorithms + tests + benchmark
-  05_dockerized_url_monitor/       Dockerized service + GitHub Actions CI/CD
+  esp32/               9 projects, beginner -> advanced (GPIO/I2C/SPI/UART/WiFi/MQTT/BLE)
+  stm32/               4 projects, beginner -> advanced (GPIO/PWM/SDIO+USB/CAN)
+  arduino/             1 project (motion-tracking pan-tilt camera rig)
+  embedded-projects/   2 projects that pair custom firmware with a PC-side app/sim
 ```
 
 Each project folder has its own `README.md` with a description, what it
@@ -51,8 +44,8 @@ difficulty (basics/syntax -> data structures -> a small app):
 | C | basics/syntax | linked list + hash table | mini shell (fork/exec, pipes) |
 | C++ | basics/syntax (OOP) | data structures (templates, smart ptrs) | bank account system (classes, files) |
 
-**[software/python/apps](software/python/apps)** — 10 real applications
-using only the Python standard library:
+**[software/python/apps](software/python/apps)** — 11 real applications,
+mostly stdlib-only:
 
 | Project | Tech tags |
 |---|---|
@@ -66,9 +59,10 @@ using only the Python standard library:
 | Encrypted password manager CLI | Python, PBKDF2/HMAC |
 | RSS feed aggregator | Python, `urllib`, `xml.etree` |
 | Threaded chat server | Python, sockets, threading |
+| AI-assisted telemetry diagnostics | Python, LLM (optional), statistical anomaly detection |
 
-All 10 were actually run (including starting servers and driving them
-with scripted clients) while building this repo.
+Every one of these was actually run (including starting servers and
+driving them with scripted clients) while building this repo.
 
 **[software/cpp/advanced](software/cpp/advanced)** — 10 systems-level
 C++17 projects: a pool allocator, a lock-free SPSC ring buffer, a
@@ -78,10 +72,8 @@ evaluator, and custom `unique_ptr`/`shared_ptr`. Not machine-compiled in
 the authoring environment — each has a `Makefile`, build locally with
 `make`.
 
-## Machine learning / computer vision
-
-**[machine-learning/computer-vision](machine-learning/computer-vision)** —
-10 projects: edge detection and k-means segmentation from scratch in
+**[software/machine-learning/computer-vision](software/machine-learning/computer-vision)**
+— 10 projects: edge detection and k-means segmentation from scratch in
 numpy, Haar cascade face detection, Lucas-Kanade optical flow tracking,
 ORB-based panorama stitching, a from-scratch numpy neural net trained on
 real handwritten digit data (98%+ test accuracy), GrabCut background
@@ -91,47 +83,42 @@ actually run and verified against known ground truth; the two PyTorch
 deep-learning projects are written but untested (no PyTorch install in
 this environment) — each README says exactly which category it's in.
 
-## Hardware
-
-Seventeen projects across ESP32, STM32, and Arduino — see
-[hardware/README.md](hardware/README.md) for the full index, per-project
-protocol tags, a protocol-diversity map (I2C/UART/SPI/WiFi-MQTT/BLE/CAN,
-one flagship project per protocol, no repeats), and firmware status notes.
-Every project has a component/connection list, most have a PCB layout
-plan + BOM, and **every project now has real firmware source code** in a
-`firmware/` subfolder (written and reviewed, not flashed/compiled in this
-environment — see each README's Firmware section for specifics).
-
-| Track | Projects | Protocols covered |
-|---|---|---|
-| [ESP32](hardware/esp32) | 8 (beginner -> advanced) | GPIO, I2C, SPI, WiFi, WiFi+MQTT, UART, BLE |
-| [STM32](hardware/stm32) | 4 (beginner -> advanced) | GPIO, PWM/Timer, SDIO+USB, CAN+I2C |
-| [Arduino](hardware/arduino) | 1 | Serial (USB), OpenCV motion tracking |
-
-## Featured projects
-
-**[featured-projects/](featured-projects)** rebuilds the four Project
-Experience entries from my resume, each with a working prototype (not
-just a description):
-
-- [ai_telemetry_diagnostics](featured-projects/ai_telemetry_diagnostics) — Python pipeline that ingests CAN-bus/sensor telemetry CSVs, runs statistical anomaly detection, and generates plain-language diagnostic summaries (LLM-backed, with a rule-based offline fallback).
-- [closed_loop_servo_pid](featured-projects/closed_loop_servo_pid) — portable C PID controller core (Arduino + STM32 HAL integration sketches) plus a Python simulator that validates the overshoot/settling-time improvement from closed-loop control vs. open-loop.
-- [rpi_cluster_arduino_datacenter](featured-projects/rpi_cluster_arduino_datacenter) — C++ thread-pool task scheduler (stands in for a 5-node Pi cluster), Arduino sketches for remote device control and scheduled automation, and a Python cluster logging/diagnostics tool.
-- [smart_energy_monitor_esp32](featured-projects/smart_energy_monitor_esp32) — ESP32 firmware reading light/temperature, filtering + hysteresis decision logic driving a relay, OLED display, and a Python simulator quantifying the false-trigger reduction and estimated energy savings.
-
-## Misc projects
-
-**[misc-projects/](misc-projects)** — five projects covering the
-fundamentals employers screen for day-to-day, each with a real,
-actually-run test suite:
+**[software/misc-projects](software/misc-projects)** — five projects
+covering the fundamentals employers screen for day-to-day, each with a
+real, actually-run test suite:
 
 | Project | One-liner | Tech tags |
 |---|---|---|
-| [01_rest_api_notes_crud](misc-projects/01_rest_api_notes_crud) | Full CRUD REST API for a notes resource | Python, Flask, SQLite |
-| [02_cli_git_changelog](misc-projects/02_cli_git_changelog) | Generates a grouped CHANGELOG.md from git log | Python, stdlib, Conventional Commits |
-| [03_fullstack_bookmarks_app](misc-projects/03_fullstack_bookmarks_app) | Multi-user bookmarks app with session auth | Python, Flask, SQLite, Docker |
-| [04_algorithms_toolkit](misc-projects/04_algorithms_toolkit) | Sorting/searching/graph algorithms with tests + empirical benchmark | Python, `unittest` |
-| [05_dockerized_url_monitor](misc-projects/05_dockerized_url_monitor) | Uptime monitor with a live status page | Python, Docker, GitHub Actions |
+| [01_rest_api_notes_crud](software/misc-projects/01_rest_api_notes_crud) | Full CRUD REST API for a notes resource | Python, Flask, SQLite |
+| [02_cli_git_changelog](software/misc-projects/02_cli_git_changelog) | Generates a grouped CHANGELOG.md from git log | Python, stdlib, Conventional Commits |
+| [03_fullstack_bookmarks_app](software/misc-projects/03_fullstack_bookmarks_app) | Multi-user bookmarks app with session auth | Python, Flask, SQLite, Docker |
+| [04_algorithms_toolkit](software/misc-projects/04_algorithms_toolkit) | Sorting/searching/graph algorithms with tests + empirical benchmark | Python, `unittest` |
+| [05_dockerized_url_monitor](software/misc-projects/05_dockerized_url_monitor) | Uptime monitor with a live status page | Python, Docker, GitHub Actions |
+
+## Hardware
+
+Sixteen projects across ESP32, STM32, Arduino, and cross-platform embedded
+builds — see [hardware/README.md](hardware/README.md) for the full index,
+per-project protocol tags, a protocol-diversity map (I2C/UART/SPI/
+WiFi-MQTT/BLE/CAN, one flagship project per protocol, no repeats), and
+firmware status notes. Every project has a component/connection list,
+most have a PCB layout plan + BOM, and **every project has real firmware
+source code** in a `firmware/` subfolder (written and reviewed, not
+flashed/compiled in this environment — see each README's Firmware section
+for specifics).
+
+| Track | Projects | Protocols covered |
+|---|---|---|
+| [ESP32](hardware/esp32) | 9 (beginner -> advanced) | GPIO, I2C, SPI, WiFi, WiFi+MQTT, UART, BLE |
+| [STM32](hardware/stm32) | 4 (beginner -> advanced) | GPIO, PWM/Timer, SDIO+USB, CAN+I2C |
+| [Arduino](hardware/arduino) | 1 | Serial (USB), OpenCV motion tracking |
+| [Embedded projects](hardware/embedded-projects) | 2 | Firmware + PC-side app/simulator pairs |
+
+**[hardware/embedded-projects](hardware/embedded-projects)** — two
+projects where the firmware is only half the story:
+
+- [closed_loop_servo_pid](hardware/embedded-projects/closed_loop_servo_pid) — portable C PID controller core (Arduino + STM32 HAL integration sketches) plus a Python simulator that validates the overshoot/settling-time improvement from closed-loop control vs. open-loop.
+- [rpi_cluster_arduino_datacenter](hardware/embedded-projects/rpi_cluster_arduino_datacenter) — C++ thread-pool task scheduler (stands in for a 5-node Pi cluster), Arduino sketches for remote device control and scheduled automation, and a Python cluster logging/diagnostics tool.
 
 ## Getting started
 

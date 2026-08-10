@@ -1,7 +1,8 @@
 # Hardware Projects
 
-Seventeen hardware projects, beginner to advanced, across ESP32, STM32,
-and Arduino. Each project folder contains a `README.md` covering:
+Sixteen hardware projects, beginner to advanced, across ESP32, STM32,
+Arduino, and cross-platform embedded builds. Each project folder contains
+a `README.md` covering:
 
 1. **Schematic (component/connection list)** — every part, its value/part
    number, and exactly what pin connects to what. This is what you'd
@@ -34,6 +35,7 @@ what to verify before trusting it on real hardware.
 | 6 | [SPI SD Card Data Logger](esp32/06_spi_sd_data_logger/README.md) | Intermediate | **SPI** | BME280 + microSD CSV logging, start/stop button |
 | 7 | [WiFi/MQTT Telemetry Node](esp32/07_wifi_mqtt_telemetry_node/README.md) | Intermediate | **WiFi + MQTT** | Publishes sensor JSON, subscribes to remote relay control |
 | 8 | [BLE Sensor Beacon](esp32/08_ble_sensor_beacon/README.md) | Intermediate | **BLE** | GATT notify characteristic + remote LED control, testable via nRF Connect |
+| 9 | [Smart Energy Monitor](esp32/09_smart_energy_monitor/README.md) | Intermediate | I2C-adjacent (analog + relay) | Light/temp-based relay optimization, filtered threshold + hysteresis logic, OLED |
 
 Projects 5-8 were added specifically to round out protocol coverage (UART,
 SPI, WiFi/MQTT, BLE) — see [Protocol diversity](#protocol-diversity) below.
@@ -58,6 +60,19 @@ This one's a rebuild of code I was given (`motion_tracker.py` +
 the README documents the actual wiring those files assume, plus an
 optional servo breakout shield PCB on top of the base Uno-and-jumper-wires
 build.
+
+## Embedded projects (cross-platform)
+
+Two projects where the firmware is only half the story — each pairs
+custom firmware with a PC-side application or simulator, and doesn't fit
+neatly under a single board track since one targets multiple platforms
+and the other targets a Raspberry Pi cluster rather than a single custom
+board.
+
+| Project | Level | Highlights |
+|---|---|---|
+| [Closed-Loop Servo PID Control](embedded-projects/closed_loop_servo_pid/README.md) | Intermediate | Portable C PID core, Arduino + STM32 HAL integration sketches, Python simulator validating overshoot/settling-time improvement |
+| [Raspberry Pi Cluster & Arduino Data Center](embedded-projects/rpi_cluster_arduino_datacenter/README.md) | Intermediate-Advanced | C++ thread-pool scheduler (5-node Pi cluster stand-in), Arduino device-control/automation sketches, Python cluster logging tool |
 
 ## Protocol diversity
 

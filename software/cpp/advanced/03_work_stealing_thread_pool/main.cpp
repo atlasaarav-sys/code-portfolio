@@ -42,7 +42,7 @@ int main() {
                 NUM_WORKERS, total.load(),
                 std::chrono::duration<double>(elapsed).count());
     std::printf("(Compare against this repo's simpler single-queue pool in\n"
-                " featured-projects/rpi_cluster_arduino_datacenter/scheduler for the shared-queue baseline.)\n");
+                " hardware/embedded-projects/rpi_cluster_arduino_datacenter/scheduler for the shared-queue baseline.)\n");
 
     return 0;
 }

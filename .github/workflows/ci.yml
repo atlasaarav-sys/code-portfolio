@@ -3,18 +3,18 @@ name: URL Monitor CI
 on:
   push:
     paths:
-      - "misc-projects/05_dockerized_url_monitor/**"
+      - "software/misc-projects/05_dockerized_url_monitor/**"
       - ".github/workflows/ci.yml"
   pull_request:
     paths:
-      - "misc-projects/05_dockerized_url_monitor/**"
+      - "software/misc-projects/05_dockerized_url_monitor/**"
 
 jobs:
   test:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: misc-projects/05_dockerized_url_monitor
+        working-directory: software/misc-projects/05_dockerized_url_monitor
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -30,7 +30,7 @@ jobs:
     needs: test
     defaults:
       run:
-        working-directory: misc-projects/05_dockerized_url_monitor
+        working-directory: software/misc-projects/05_dockerized_url_monitor
     steps:
       - uses: actions/checkout@v4
       - name: Build Docker image

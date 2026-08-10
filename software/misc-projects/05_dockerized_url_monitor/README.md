@@ -56,9 +56,9 @@ python -m unittest discover tests
 
 ## CI/CD pipeline
 
-See [`.github/workflows/ci.yml`](../../.github/workflows/ci.yml) at the
+See [`.github/workflows/ci.yml`](../../../.github/workflows/ci.yml) at the
 repo root. It triggers on pushes/PRs touching
-`misc-projects/05_dockerized_url_monitor/**`, and runs two jobs: `test`
+`software/misc-projects/05_dockerized_url_monitor/**`, and runs two jobs: `test`
 (Python 3.12, `python -m unittest discover tests`) and `docker-build`
 (builds the image with `docker build .`, doesn't push anywhere — proving
 the image builds is the point for a portfolio pipeline, not standing up a

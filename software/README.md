@@ -1,19 +1,25 @@
 # Software
 
-All language-based coding work, grouped by language. Each language has a
-`fundamentals`-style progression (basics -> data structures -> a small
-app) plus a deeper track:
+All software work: language fundamentals, deeper language-specific
+tracks, machine learning/computer vision, and a set of small applied
+projects.
 
 ```
 python/
   01_basics_syntax, 02_data_structures, 03_todo_cli_app   <- fundamentals, increasing difficulty
-  apps/                                                     <- 10 real stdlib-only applications
+  apps/                                                     <- 11 real applications (mostly stdlib-only)
 c/
   01_basics_syntax, 02_data_structures, 03_mini_shell       <- fundamentals, increasing difficulty
 cpp/
   01_basics_syntax, 02_data_structures, 03_bank_system      <- fundamentals, increasing difficulty
   advanced/                                                  <- 10 systems-level C++17 projects
+machine-learning/
+  computer-vision/                                           <- 10 classical CV + deep learning projects
+misc-projects/                                                <- 5 projects: REST API, CLI tool, full-stack app, DSA+tests, Dockerized CI/CD
 ```
 
-See [python/apps/README.md](python/apps/README.md) and
-[cpp/advanced/README.md](cpp/advanced/README.md) for the deeper tracks.
+See [python/apps/README.md](python/apps/README.md),
+[cpp/advanced/README.md](cpp/advanced/README.md),
+[machine-learning/computer-vision/README.md](machine-learning/computer-vision/README.md),
+and [misc-projects/README.md](misc-projects/README.md) for the deeper
+tracks.

@@ -7,7 +7,7 @@ Reads ambient light and temperature, estimates power consumption /
 inefficient-usage conditions, and actuates a relay to cut power to a
 device when usage looks wasteful (e.g. a light left on in a bright room,
 or HVAC running against an open window) — with an OLED showing live
-readings. Rebuilt from the description on my resume.
+readings.
 
 ## Files
 
@@ -19,8 +19,8 @@ readings. Rebuilt from the description on my resume.
   keep decision latency under 100 ms.
 - `sim/energy_sim.py` — ports the exact same filtering + threshold +
   hysteresis logic to Python and runs it against a simulated day of
-  light/temperature data (with realistic sensor noise), so the two claims
-  on my resume are things you can regenerate:
+  light/temperature data (with realistic sensor noise), so the two design
+  claims below are things you can regenerate rather than just assert:
   - **false-trigger reduction** from adding the moving-average filter +
     hysteresis band, vs. a naive instant-threshold comparator
   - **simulated energy savings** from cutting power during detected

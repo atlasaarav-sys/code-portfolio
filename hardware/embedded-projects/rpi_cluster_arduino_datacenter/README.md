@@ -6,7 +6,7 @@
 A small compute cluster (modeled here as a 5-worker thread pool standing in
 for 5 Raspberry Pi nodes) with a custom task scheduler, plus Arduino
 microcontrollers handling device control and automation, tied together with
-logging/diagnostic tooling — rebuilding the project described on my resume.
+logging/diagnostic tooling.
 
 ## Files
 
@@ -24,8 +24,8 @@ logging/diagnostic tooling — rebuilding the project described on my resume.
 - `arduino/automation_routine.ino` — Arduino sketch running scheduled
   automation (a `millis()`-based non-blocking scheduler triggering timed
   actions) and reporting status over serial — the "scheduled automation
-  routines" piece. Six of these/`device_control.ino` boards is the "6
-  Arduino microcontrollers" from the resume bullet.
+  routines" piece. Six of these/`device_control.ino` boards forms the
+  6-Arduino-microcontroller fleet this project is designed around.
 - `logging/cluster_logger.py` — simulates a cluster run (task dispatch,
   completion, and injected communication failures across 5 nodes + 6
   Arduino devices), logs every event, and prints a diagnostic report

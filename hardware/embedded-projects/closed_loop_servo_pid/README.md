@@ -5,12 +5,11 @@ sketches), Python (dependency-free simulator for validating tuning without
 hardware on hand)
 
 Real-time PID position-control loop for a potentiometer-feedback servo/DC
-motor, running the control loop at ~50 Hz on-target — matching the
-"microcontroller firmware" project on my resume. Since I don't have the
-original board firmware, this is a rebuild: a portable PID core in C you
-drop onto an Arduino or STM32 project, plus a Python simulation that models
-the plant (motor + potentiometer feedback) so the PID gains and the claimed
-overshoot/settling-time improvements can be verified without hardware.
+motor, running the control loop at ~50 Hz on-target: a portable PID core
+in C you drop onto an Arduino or STM32 project, plus a Python simulation
+that models the plant (motor + potentiometer feedback) so the PID gains
+and the overshoot/settling-time improvements can be verified without
+hardware on hand.
 
 ## Files
 

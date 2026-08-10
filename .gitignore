@@ -41,10 +41,10 @@ Release/
 software/python/03_todo_cli_app/tasks.json
 software/python/03_todo_cli_app/test_tasks.json
 software/cpp/03_bank_system/accounts.txt
-featured-projects/ai_telemetry_diagnostics/sample_data.csv
-featured-projects/closed_loop_servo_pid/sim/step_response.csv
-featured-projects/smart_energy_monitor_esp32/sim/energy_trace.csv
-featured-projects/*/**/__pycache__/
+software/python/apps/11_ai_telemetry_diagnostics/sample_data.csv
+hardware/embedded-projects/closed_loop_servo_pid/sim/step_response.csv
+hardware/esp32/09_smart_energy_monitor/sim/energy_trace.csv
+hardware/embedded-projects/*/**/__pycache__/
 
 # software/cpp/advanced: built demo binaries (extensionless on Linux/Mac, .exe covered above)
 software/cpp/advanced/*/*_demo
@@ -55,24 +55,24 @@ software/python/apps/*/shortener.db
 software/python/apps/*/vault.json
 software/python/apps/01_markdown_static_site_generator/output/
 
-# machine-learning/computer-vision: generated demo images and downloaded/trained model artifacts
-machine-learning/computer-vision/*/test_image.png
-machine-learning/computer-vision/*/edges_output.png
-machine-learning/computer-vision/*/segmented_output.png
-machine-learning/computer-vision/*/detections_output.png
-machine-learning/computer-vision/*/left.png
-machine-learning/computer-vision/*/right.png
-machine-learning/computer-vision/*/panorama_output.png
-machine-learning/computer-vision/*/foreground_output.png
-machine-learning/computer-vision/*/plate_crop.png
-machine-learning/computer-vision/07_pytorch_cnn_classifier/data/
-machine-learning/computer-vision/07_pytorch_cnn_classifier/*.pt
-machine-learning/computer-vision/10_neural_style_transfer/stylized.jpg
+# software/machine-learning/computer-vision: generated demo images and downloaded/trained model artifacts
+software/machine-learning/computer-vision/*/test_image.png
+software/machine-learning/computer-vision/*/edges_output.png
+software/machine-learning/computer-vision/*/segmented_output.png
+software/machine-learning/computer-vision/*/detections_output.png
+software/machine-learning/computer-vision/*/left.png
+software/machine-learning/computer-vision/*/right.png
+software/machine-learning/computer-vision/*/panorama_output.png
+software/machine-learning/computer-vision/*/foreground_output.png
+software/machine-learning/computer-vision/*/plate_crop.png
+software/machine-learning/computer-vision/07_pytorch_cnn_classifier/data/
+software/machine-learning/computer-vision/07_pytorch_cnn_classifier/*.pt
+software/machine-learning/computer-vision/10_neural_style_transfer/stylized.jpg
 
-# misc-projects: locally-created data files, not source content
-misc-projects/01_rest_api_notes_crud/notes.db
-misc-projects/03_fullstack_bookmarks_app/bookmarks.db
-misc-projects/05_dockerized_url_monitor/monitor.db
+# software/misc-projects: locally-created data files, not source content
+software/misc-projects/01_rest_api_notes_crud/notes.db
+software/misc-projects/03_fullstack_bookmarks_app/bookmarks.db
+software/misc-projects/05_dockerized_url_monitor/monitor.db
 
 # --- tooling ---
 .claude/

@@ -1,10 +1,10 @@
 # Python Apps
 
-Ten small, real applications — networking, persistence, cryptography
-basics, and text processing — written using only the Python standard
-library (no `pip install` required) so every one of them is runnable
-as-is. Each was actually executed while building this repo, not just
-written and hoped to work.
+Eleven small, real applications — networking, persistence, cryptography
+basics, text processing, and a data/LLM pipeline — written mostly using
+just the Python standard library so every one of them is runnable as-is
+(app 11 optionally uses the Anthropic API). Each was actually executed
+while building this repo, not just written and hoped to work.
 
 ## Apps
 
@@ -20,6 +20,7 @@ written and hoped to work.
 | 8 | [Password Manager CLI](08_password_manager_cli) | local encrypted vault, PBKDF2-derived key, master password |
 | 9 | [RSS Feed Aggregator](09_rss_feed_aggregator) | fetches and parses RSS/Atom feeds with `urllib` + `xml.etree`, dedupes entries |
 | 10 | [Threaded Chat Server](10_threaded_chat_server) | multi-client TCP chat server, one thread per connection |
+| 11 | [AI-Assisted Telemetry Diagnostics](11_ai_telemetry_diagnostics) | ingests CAN-bus/sensor telemetry CSVs, runs anomaly detection, generates plain-language diagnostic summaries (LLM-backed with a rule-based offline fallback) |
 
 ## Notes
 

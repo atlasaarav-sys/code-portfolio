@@ -65,7 +65,6 @@ python -m unittest tests/test_anomaly_detector.py
 
 ## Notes
 
-This is a working prototype matching the pipeline described on my resume —
-signal thresholds (`SIGNAL_SPECS` in `anomaly_detector.py`) are
+Signal thresholds (`SIGNAL_SPECS` in `anomaly_detector.py`) are
 illustrative defaults for a solar-vehicle-style telemetry set, not tuned
-against real Long Horn Racing Solar hardware data.
+against real hardware data — swap them for your own sensor ranges.
