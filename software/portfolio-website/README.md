@@ -23,9 +23,33 @@ start index.html
 xdg-open index.html
 ```
 
-To deploy: this is a static file, so it works as-is on GitHub Pages,
-Netlify, Vercel, or any static host — point the host at this file (or
-rename to match your host's expected entry point).
+## Deployment (GitHub Pages, automated)
+
+[`.github/workflows/deploy-pages.yml`](../../.github/workflows/deploy-pages.yml)
+at the repo root deploys this folder to GitHub Pages automatically on
+every push to `main` that touches it. One-time manual setup (can't be done
+via a git push — it's a repo Settings toggle):
+
+1. On GitHub: **Settings → Pages → Build and deployment → Source →
+   "GitHub Actions"**.
+2. Push (or re-run the workflow from the **Actions** tab) — the site
+   deploys to `https://<username>.github.io/<repo>/` within ~1 minute.
+
+After that first toggle, every future push to this folder redeploys
+automatically — no further manual steps.
+
+### Other free/cheap static hosts
+
+Since this is a plain static file, it also works as-is (drag-and-drop or
+connect-the-repo, no build step) on:
+
+- **Netlify** — free tier, drag-and-drop or GitHub-connected deploys, free
+  subdomain, custom domain support
+- **Vercel** — free tier, same GitHub-connected workflow
+- **Cloudflare Pages** — free tier, fastest global CDN of the three
+
+See the root [README.md](../../README.md#hosting-this-site) for a fuller
+comparison and cheap custom-domain options.
 
 ## What's in it
 
