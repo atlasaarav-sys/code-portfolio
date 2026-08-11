@@ -28,6 +28,7 @@ hardware/
   stm32/               4 projects, beginner -> advanced (GPIO/PWM/SDIO+USB/CAN)
   arduino/             1 project (motion-tracking pan-tilt camera rig)
   embedded-projects/   2 projects that pair custom firmware with a PC-side app/sim
+  3d-models/           original SolidWorks CAD work (differential gearbox, 4-cyl engine, battle bot) + portfolio deck
 ```
 
 Each project folder has its own `README.md` with a description, what it

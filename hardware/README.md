@@ -1,8 +1,9 @@
 # Hardware Projects
 
 Sixteen hardware projects, beginner to advanced, across ESP32, STM32,
-Arduino, and cross-platform embedded builds. Each project folder contains
-a `README.md` covering:
+Arduino, and cross-platform embedded builds, plus a CAD/3D-models track
+of original SolidWorks mechanical design work. Each firmware project
+folder contains a `README.md` covering:
 
 1. **Schematic (component/connection list)** — every part, its value/part
    number, and exactly what pin connects to what. This is what you'd
@@ -68,6 +69,18 @@ board.
 |---|---|---|
 | [Closed-Loop Servo PID Control](embedded-projects/closed_loop_servo_pid/README.md) | Intermediate | Portable C PID core, Arduino + STM32 HAL integration sketches, Python simulator validating overshoot/settling-time improvement |
 | [Raspberry Pi Cluster & Arduino Data Center](embedded-projects/rpi_cluster_arduino_datacenter/README.md) | Intermediate-Advanced | C++ thread-pool scheduler (5-node Pi cluster stand-in), Arduino device-control/automation sketches, Python cluster logging tool |
+
+## CAD / 3D models
+
+Original SolidWorks mechanical design work — see
+[3d-models/README.md](3d-models/README.md) for details.
+
+| Project | Highlights |
+|---|---|
+| [Differential Gear Box](3d-models/differential-gear-box) | Full gearbox assembly — housing + four gears |
+| [Four Cylinder Engine](3d-models/four-cylinder-engine) | Inline 4-cylinder engine assembly — piston, crankshaft, connecting rod |
+| [Battle Bot](3d-models/battle-bot) | Combat robot chassis part, wheel design, and a released dimensioned drawing |
+| [Portfolio Deck](3d-models/portfolio-deck) | SolidWorks design portfolio slide deck (.pptx + PDF) |
 
 ## Protocol diversity
 
