@@ -31,7 +31,7 @@ pip install pytesseract  # plus install the Tesseract binary separately
 python main.py
 ```
 
-## What was actually tested here
+## Testing notes
 
 **Localization** (`plate_localizer.py`) was run against a synthesized test
 image with a known plate-shaped rectangle (correct aspect ratio, distinct

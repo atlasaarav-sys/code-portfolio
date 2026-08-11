@@ -28,4 +28,6 @@ make
 ## Notes
 
 Every `malloc` has a matching `free`; run under `valgrind` (Linux/WSL) to
-verify no leaks if you want to double-check.
+verify no leaks if you want to double-check. All three build clean with
+`gcc -Wall -Wextra -std=c11` and the demo output matches what's in each
+file's `main()`.

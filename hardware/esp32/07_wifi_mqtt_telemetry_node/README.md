@@ -39,6 +39,12 @@ when a router hiccups, which naive tutorials skip).
    -v`) to watch telemetry arrive, and publish `"ON"`/`"OFF"` to
    `esp32/telemetry_node/cmd` to toggle the relay remotely.
 
+Compiles clean with PubSubClient + ArduinoJson pulled in — 907,748 bytes
+flash (69%, WiFi/MQTT/JSON add up fast on a bare WROOM-32), 46,880 bytes
+RAM (14%). Haven't pointed it at a live broker yet, so the reconnect
+logic is tested by reading, not by actually yanking a router's power —
+worth doing that on a bench before trusting it unattended.
+
 ## Photos / demo
 
 *(placeholder — add a photo of the wired breadboard and/or a terminal

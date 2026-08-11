@@ -31,7 +31,7 @@ python webcam_demo.py          # live webcam
 python main.py your_photo.jpg  # static image
 ```
 
-## What was actually tested here
+## Test results
 
 `main.py` was run against a synthetic (no real face) test image to verify
 the pipeline executes end-to-end without error and correctly reports zero

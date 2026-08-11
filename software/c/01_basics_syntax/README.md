@@ -34,7 +34,5 @@ gcc -Wall -Wextra -std=c11 -o basics basics.c
 
 ## Notes
 
-Written/reviewed for standard C11 correctness; not machine-compiled in the
-authoring environment (no toolchain installed there) — compile locally with
-`make` before relying on it, and open an issue/fix forward if anything
-doesn't build.
+Built and run with `gcc -Wall -Wextra -std=c11` (MinGW-w64 on Windows) —
+no warnings, output matches what's expected.

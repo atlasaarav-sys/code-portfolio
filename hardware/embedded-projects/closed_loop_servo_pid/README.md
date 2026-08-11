@@ -51,3 +51,9 @@ so you can plot it in a spreadsheet if you want a chart.
 `pid_sim.py` re-implements the identical update equation in Python
 specifically so the simulated numbers reflect what the C code would do, not
 a different textbook PID formula.
+
+The Arduino integration (`servo_pid_arduino.ino` + `pid_controller.c`)
+actually compiles against an Uno — 4,782 bytes flash (14%), 244 bytes RAM
+(11%). The STM32 side (`servo_pid_stm32.c`) is HAL-based and needs a real
+CubeMX project to build against, which I don't have here, so that one's
+reviewed but unverified.

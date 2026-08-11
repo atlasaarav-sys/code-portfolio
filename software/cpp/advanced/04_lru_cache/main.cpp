@@ -1,5 +1,6 @@
 #include <cassert>
 #include <cstdio>
+#include <string>
 
 #include "lru_cache.hpp"
 

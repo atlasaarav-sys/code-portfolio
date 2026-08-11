@@ -111,8 +111,9 @@ Unified Sensor", "BH1750" (Christopher Laws), and "LoRa"
 (sandeepmistry/arduino-LoRa) from the Library Manager. Set
 `LORA_FREQUENCY` to your region's ISM band.
 
-**Status:** written and reviewed, not flashed/compiled here (no
-LoRa/BME280/BH1750 hardware in this environment). The sensor-rail power
-sequencing (enable -> settle -> read -> disable -> sleep) is the part
-worth scope-checking on real hardware first — that's exactly the failure
-mode this design is trying to avoid.
+Compiles clean with the BME280/BH1750/LoRa libraries installed — 320,688
+bytes flash (24%), 23,932 bytes RAM (7%). No LoRa/BME280/BH1750 hardware
+here to actually run it on, though, so the sensor-rail power sequencing
+(enable -> settle -> read -> disable -> sleep) is the part I'd
+scope-check on a real board first — a timing mistake there is exactly the
+failure mode this design is trying to avoid in the first place.

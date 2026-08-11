@@ -37,6 +37,14 @@ custom app or broker needed.
    - Write `01` or `00` (as a byte) to the LED characteristic
      (`...-000000000002`) to turn the onboard LED on/off remotely.
 
+Compiled against ESP32 Arduino core 3.3.11 (1,101,167 bytes flash / 84%,
+41,412 bytes RAM / 12% — BLE's the heaviest stack in this whole track)
+and it didn't build on the first try: `BLECharacteristic::getValue()`
+returns an Arduino `String` in this core version, not `std::string` like
+older esp32-BLE-Arduino releases. Fixed by switching the callback to use
+`String` directly. If you're on an older core and this won't build,
+that's the line to check first.
+
 ## Photos / demo
 
 *(placeholder — add a screen-recording GIF of nRF Connect showing live

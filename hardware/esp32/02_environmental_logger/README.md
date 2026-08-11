@@ -92,7 +92,9 @@ Requires the "Adafruit BME280 Library" + "Adafruit Unified Sensor" +
 "Adafruit SSD1306" + "Adafruit GFX Library" from the Arduino Library
 Manager.
 
-**Status:** written and reviewed, not flashed/compiled here (no BME280 +
-OLED + ESP32 board on hand in this environment). The Adafruit library
-calls and deep-sleep/wake API usage are standard, current patterns — worth
-a bench check on real hardware before trusting the sleep-current numbers.
+Compiles clean (320,228 bytes flash / 24%, 23,836 bytes RAM / 7%) with the
+Adafruit libraries pulled in via `arduino-cli lib install`. Haven't run it
+against a real BME280/OLED — no hardware here to test on — so the deep-
+sleep wake timing and the actual sleep-current draw are still unverified;
+that's the part I'd want a bench check on before trusting the battery-life
+math in the schematic notes above.

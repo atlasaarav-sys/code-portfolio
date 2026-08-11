@@ -26,4 +26,4 @@ make
 ## Notes
 
 Headers are templates, so they're header-only (no separate .cpp to compile)
-— `main.cpp` includes them directly.
+— `main.cpp` includes them directly. Builds and runs clean under g++/C++17.

@@ -26,7 +26,7 @@ python main.py
 
 Writes `left.png`, `right.png`, and `panorama_output.png`.
 
-## What was actually tested here
+## Validation
 
 Split a 400x250 synthetic textured image into two overlapping 250x250
 halves (100px overlap), ran the full ORB -> match -> RANSAC homography ->

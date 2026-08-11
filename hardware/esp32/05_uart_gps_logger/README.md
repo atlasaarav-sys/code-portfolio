@@ -40,6 +40,11 @@ display should work with minor tweaks.
 5. Fixes are appended to `/track_log.csv` in LittleFS; pull it via a
    companion sketch or `esptool.py` if you want to extract logged tracks.
 
+Compiles clean against the ESP32 core with the libraries above installed
+— 349,772 bytes flash (26%), 24,132 bytes RAM (7%). Haven't taken it
+outside with a real GPS module yet, so step 4 is the part still on my
+to-do list.
+
 ## Photos / demo
 
 *(placeholder — add a photo of the assembled board and/or a GIF of the

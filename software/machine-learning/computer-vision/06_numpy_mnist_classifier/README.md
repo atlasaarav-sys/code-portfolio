@@ -25,7 +25,7 @@ so no internet download is needed).
 python main.py
 ```
 
-## What was actually tested here
+## Results from an actual run
 
 Trained on 1437 real digit images (80% split of the 1797-image dataset),
 evaluated on the held-out 360. See the printed output from the actual run

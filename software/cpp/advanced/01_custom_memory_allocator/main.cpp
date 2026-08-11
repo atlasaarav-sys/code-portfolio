@@ -52,10 +52,10 @@ void demo_stl_adapter() {
     auto default_time = std::chrono::steady_clock::now() - start;
 
     std::printf("\nSTL adapter: pushed %d ints\n", N);
-    std::printf("  pool-backed vector:    %ld us\n",
-                std::chrono::duration_cast<std::chrono::microseconds>(pooled_time).count());
-    std::printf("  default-alloc vector:  %ld us\n",
-                std::chrono::duration_cast<std::chrono::microseconds>(default_time).count());
+    std::printf("  pool-backed vector:    %lld us\n",
+                static_cast<long long>(std::chrono::duration_cast<std::chrono::microseconds>(pooled_time).count()));
+    std::printf("  default-alloc vector:  %lld us\n",
+                static_cast<long long>(std::chrono::duration_cast<std::chrono::microseconds>(default_time).count()));
     std::printf("  (both reserve() up front, so this mostly shows steady-state allocator overhead)\n");
 }
 

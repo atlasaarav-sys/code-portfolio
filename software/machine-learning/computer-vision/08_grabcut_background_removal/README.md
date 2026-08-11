@@ -27,7 +27,7 @@ python main.py
 Writes `test_image.png` and `foreground_output.png` (RGBA, background
 transparent).
 
-## What was actually tested here
+## What running it actually showed
 
 Generated a 250x250 image: a solid-colored circle (the "subject") on a
 textured background of a different color range. Ran GrabCut with a

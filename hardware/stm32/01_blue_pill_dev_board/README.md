@@ -84,7 +84,8 @@ between two blink rates. `MX_GPIO_Init()` (pin mode/clock config) is left
 as CubeMX boilerplate since it's board-config-specific; the polling loop
 is the actual firmware logic. Program via SWD with an ST-Link (J2).
 
-**Status:** written and reviewed, not compiled/flashed here (no
-STM32CubeIDE project scaffold or ST-Link attached in this environment) —
-this is the reference platform every later STM32 board in this track
-builds on, so it's worth actually bringing up first.
+I haven't actually built this one — no STM32CubeIDE project scaffold or
+ST-Link on hand, and the HAL calls need CubeMX's generated init code to
+even link. Since this board is the reference every other STM32 project
+in this repo physically builds on, it's the one I'd bring up on a bench
+first if I got hardware in hand.

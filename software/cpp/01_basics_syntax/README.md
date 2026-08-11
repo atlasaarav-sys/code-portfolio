@@ -27,5 +27,5 @@ make
 
 ## Notes
 
-Not machine-compiled in the authoring environment (no toolchain installed
-there) — build locally with `make` (g++, C++17) before relying on it.
+Compiled clean with `g++ -Wall -Wextra -std=c++17` and both binaries run
+as expected.

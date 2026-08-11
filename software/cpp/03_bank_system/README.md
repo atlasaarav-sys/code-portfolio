@@ -25,7 +25,27 @@ make
 ./bank_demo
 ```
 
+Sample output from an actual run:
+
+```
+-- initial state --
+C001 (Checking) owner=Sam balance=500
+S001 (Savings) owner=Aarav balance=1000
+
+-- after transferring 250 from S001 to C001 --
+C001 (Checking) owner=Sam balance=750
+S001 (Savings) owner=Aarav balance=750
+
+-- after applying interest to S001 --
+C001 (Checking) owner=Sam balance=750
+S001 (Savings) owner=Aarav balance=765
+
+caught expected exception: withdrawal exceeds balance and overdraft limit
+
+Saved account snapshot to accounts.txt
+```
+
 ## Notes
 
 `accounts.txt` is created at runtime and gitignored — it's local demo state,
-not source content.
+not source content. Compiles clean with g++/C++17, no warnings.

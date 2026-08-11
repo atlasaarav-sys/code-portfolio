@@ -26,7 +26,7 @@ posterized/segmented image.
 python main.py
 ```
 
-## What was actually tested here
+## How I checked this
 
 Ran k-means (k=3, k-means++ init) against a synthesized image with three
 exact, well-separated fill colors plus a little Gaussian noise. Verified:

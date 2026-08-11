@@ -24,7 +24,7 @@ python main.py
 
 For a real video: `flow_tracker.track_video(cv2.VideoCapture("video.mp4"))`.
 
-## What was actually tested here
+## Checking it against ground truth
 
 Generated two 300x300 synthetic frames: frame 1 has a textured patch at a
 known location, frame 2 has the identical patch shifted by exactly

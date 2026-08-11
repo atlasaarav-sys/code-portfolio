@@ -102,7 +102,8 @@ next step — this file stops at open-loop + readback, same as [the
 closed-loop PID project](../../embedded-projects/closed_loop_servo_pid)
 in this repo, which is the piece to reuse for that.
 
-**Status:** written and reviewed, not compiled/flashed here (no
-STM32F401/DRV8833/encoder hardware in this environment) — verify the
-`setMotorSpeed` sign convention against your actual DRV8833 wiring before
-trusting "forward" vs "reverse."
+Not bench-tested — I don't have the STM32F401/DRV8833/encoder hardware to
+try it on. If you build this, double-check the `setMotorSpeed` sign
+convention against your actual DRV8833 wiring before trusting which
+direction is "forward" — that's the kind of thing that's easy to get
+backwards on paper.

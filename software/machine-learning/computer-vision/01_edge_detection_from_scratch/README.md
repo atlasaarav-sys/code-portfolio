@@ -26,7 +26,7 @@ python main.py
 
 Writes `test_image.png` and `edges_output.png` to this directory.
 
-## What was actually tested here
+## Verification
 
 Ran the full pipeline against a synthesized 200x200 image containing a
 filled rectangle and a filled circle on a flat background. Verified:

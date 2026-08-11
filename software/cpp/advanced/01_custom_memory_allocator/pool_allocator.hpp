@@ -40,7 +40,7 @@ public:
             throw std::bad_alloc(); // pool exhausted
         }
         void *block = free_list_;
-        free_list_ = *reinterpret_cast<void **>(block);
+        free_list_ = reinterpret_cast<void **>(*reinterpret_cast<void **>(block));
         in_use_++;
         return block;
     }

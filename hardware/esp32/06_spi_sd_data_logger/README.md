@@ -40,6 +40,10 @@ version of the same idea; this is the SPI version).
    `/log_NNN.csv` file (auto-incrementing so you never overwrite old
    sessions) and appends a row every second. Press again to stop.
 
+Compiles clean — 356,078 bytes flash (27%), 24,216 bytes RAM (7%). Not
+run against a physical SD card/BME280 yet, so the FAT32 formatting
+assumption in step 2 and the actual write speed are still unverified.
+
 ## Photos / demo
 
 *(placeholder — add a photo of the wired breadboard and/or a GIF of the
