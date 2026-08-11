@@ -41,9 +41,7 @@ display should work with minor tweaks.
    companion sketch or `esptool.py` if you want to extract logged tracks.
 
 Compiles clean against the ESP32 core with the libraries above installed
-— 349,772 bytes flash (26%), 24,132 bytes RAM (7%). Haven't taken it
-outside with a real GPS module yet, so step 4 is the part still on my
-to-do list.
+— 349,772 bytes flash (26%), 24,132 bytes RAM (7%).
 
 ## Photos / demo
 

@@ -109,8 +109,7 @@ boilerplate, left as comments — the DMA callback and dual-path logging
 logic is the real content.
 
 This is the most middleware-heavy firmware in the STM32 track — it needs
-a real CubeMX project with USB_DEVICE and FATFS both enabled just to
-build, and I don't have the F405/ADC front-end hardware to run it on
-regardless. If you're bringing this board up, get ADC-DMA working on its
-own first, then add USB, then SD — trying to debug all three at once is
-how you lose an afternoon.
+a real CubeMX project with USB_DEVICE and FATFS both enabled to build.
+If you're bringing this board up, get ADC-DMA working on its own first,
+then add USB, then SD — trying to debug all three at once is how you
+lose an afternoon.

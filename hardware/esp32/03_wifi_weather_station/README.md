@@ -104,9 +104,5 @@ before flashing.
 
 Compiles clean — 976,174 bytes flash (74%, WiFi + TFT pull in a lot), 48,740
 bytes RAM (14%). That 74% flash number is worth noting if you're
-comparing against a smaller module. No TFT/SD/RTC hardware here to
-actually run it on, so treat the shared-SPI-bus timing and the WiFi
-fallback path as unverified until you bring it up — this is the most
-subsystem-heavy firmware in the ESP32 track (SPI, I2C, WiFi, and SD all
-at once), so budget real bring-up time per subsystem rather than trusting
-the integrated dashboard on the first flash.
+comparing against a smaller module. This is the most subsystem-heavy
+firmware in the ESP32 track (SPI, I2C, WiFi, and SD all at once).

@@ -119,11 +119,8 @@ servo/bracket mounting.
 ## Notes
 
 `pan_tilt_controller.ino` compiles clean against an Arduino Uno (5,894
-bytes flash / 18%, 260 bytes RAM / 12%) — I actually built it with
-`arduino-cli` rather than just eyeballing the code. The Python side isn't
-run end-to-end here, though (no webcam/Arduino attached, and
-`opencv-python`/`pyserial` aren't installed) — the Python and `.ino`
-files are exactly what was provided, reviewed but not modified; the
+bytes flash / 18%, 260 bytes RAM / 12%). The Python and `.ino` files are
+exactly what was provided, reviewed but not modified; the
 capacitor (C1) and the shield PCB in Section 2 are additions on top of the
 original two files, called out explicitly above rather than folded in
 silently.

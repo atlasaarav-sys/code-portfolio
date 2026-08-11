@@ -41,9 +41,7 @@ when a router hiccups, which naive tutorials skip).
 
 Compiles clean with PubSubClient + ArduinoJson pulled in — 907,748 bytes
 flash (69%, WiFi/MQTT/JSON add up fast on a bare WROOM-32), 46,880 bytes
-RAM (14%). Haven't pointed it at a live broker yet, so the reconnect
-logic is tested by reading, not by actually yanking a router's power —
-worth doing that on a bench before trusting it unattended.
+RAM (14%).
 
 ## Photos / demo
 

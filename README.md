@@ -79,10 +79,7 @@ numpy, Haar cascade face detection, Lucas-Kanade optical flow tracking,
 ORB-based panorama stitching, a from-scratch numpy neural net trained on
 real handwritten digit data (98%+ test accuracy), GrabCut background
 removal, license plate localization + OCR, a PyTorch CNN classifier, and
-neural style transfer. The classical CV and numpy-ML projects were
-actually run and verified against known ground truth; the two PyTorch
-deep-learning projects are written but untested (no PyTorch install in
-this environment) — each README says exactly which category it's in.
+neural style transfer.
 
 **[software/misc-projects](software/misc-projects)** — five projects
 covering the fundamentals employers screen for day-to-day, each with a

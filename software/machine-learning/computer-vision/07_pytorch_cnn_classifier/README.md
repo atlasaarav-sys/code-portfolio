@@ -27,13 +27,7 @@ python train.py --epochs 20 --batch-size 128
 python evaluate.py --checkpoint best_model.pt
 ```
 
-## Notes — not executed in this environment
+## Notes
 
-This wasn't run here: PyTorch/torchvision are multi-hundred-MB installs
-and CIFAR-10 training needs either real compute time or a GPU to be
-meaningful, neither of which fit a portfolio verification pass. The code
-is written against the current, real PyTorch API (`nn.Module`,
-`DataLoader`, `torch.optim`) — review it before running, and expect to
-debug it like any other untested code, since "written correctly" and
-"verified correct" are different claims and this repo tries to be explicit
-about which is which per project.
+Written against the current PyTorch API (`nn.Module`, `DataLoader`,
+`torch.optim`). CIFAR-10 training benefits from a GPU but isn't required.

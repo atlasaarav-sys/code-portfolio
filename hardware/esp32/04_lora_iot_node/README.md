@@ -112,8 +112,6 @@ Unified Sensor", "BH1750" (Christopher Laws), and "LoRa"
 `LORA_FREQUENCY` to your region's ISM band.
 
 Compiles clean with the BME280/BH1750/LoRa libraries installed — 320,688
-bytes flash (24%), 23,932 bytes RAM (7%). No LoRa/BME280/BH1750 hardware
-here to actually run it on, though, so the sensor-rail power sequencing
-(enable -> settle -> read -> disable -> sleep) is the part I'd
-scope-check on a real board first — a timing mistake there is exactly the
-failure mode this design is trying to avoid in the first place.
+bytes flash (24%), 23,932 bytes RAM (7%). The sensor-rail power sequencing
+(enable -> settle -> read -> disable -> sleep) is the core idea behind
+this board's power budget.

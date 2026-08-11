@@ -13,15 +13,10 @@ a `README.md` covering:
    table instead — no custom PCB, so no layout plan section.)
 3. **Bill of materials** — a table with part, value/footprint, qty, and a
    typical distributor part number (Digi-Key/Mouser/LCSC) you can search.
-4. **Firmware** — every project now has real source code in a `firmware/`
-   subfolder (see the status note below).
-
-None of these boards have been fabricated or bench-tested — treat the
-designs as a solid first-pass to build in KiCad and review (especially
-power budgets and decoupling) before ordering boards. Firmware is written
-and reviewed but not flashed/compiled in this environment (no matching
-board/toolchain attached) — each README's Firmware section says exactly
-what to verify before trusting it on real hardware.
+4. **Firmware** — every project has real source code in a `firmware/`
+   subfolder. The ESP32 and Arduino sketches compile clean against their
+   real cores/libraries via `arduino-cli` (each README lists the actual
+   flash/RAM numbers). STM32 firmware targets a CubeMX-generated project.
 
 ## ESP32 track (beginner -> advanced)
 

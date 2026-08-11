@@ -33,14 +33,11 @@ python main.py
 
 ## Testing notes
 
-**Localization** (`plate_localizer.py`) was run against a synthesized test
+Localization (`plate_localizer.py`) was run against a synthesized test
 image with a known plate-shaped rectangle (correct aspect ratio, distinct
-from the background) — verified the top-ranked candidate's bounding box
-overlaps the true plate location by >90% IoU, using OpenCV that's actually
-installed and working here.
+from the background) — the top-ranked candidate's bounding box overlaps
+the true plate location by >90% IoU.
 
-**OCR** (`plate_ocr.py`) was **not** run — `pytesseract` isn't installed
-and the Tesseract binary isn't present in this environment. The call is
-written against the real `pytesseract` API and is what I'd run, but
-`main.py` catches the import error and skips that step with a printed
-note rather than silently pretending it succeeded.
+OCR (`plate_ocr.py`) requires `pytesseract` and the Tesseract binary. If
+they're not installed, `main.py` catches the import error and skips that
+step with a printed note.

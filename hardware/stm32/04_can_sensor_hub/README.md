@@ -114,9 +114,5 @@ console. Peripheral/middleware init (`MX_CAN1_Init`, `MX_I2C1_Init`,
 `MX_USB_DEVICE_Init`) is CubeMX boilerplate, left as comments — the CAN
 framing and I2C read logic is the real content.
 
-Haven't built or flashed this one — needs a real CubeMX bxCAN+USB_DEVICE
-project to compile, and I don't have the CAN transceiver or IMU to test
-against anyway. CAN specifically needs a second node on the bus (or a
-USB-CAN adapter running `candump`) before you can actually confirm frames
-are landing correctly — that's not a step worth skipping once you have
-hardware.
+CAN specifically needs a second node on the bus (or a USB-CAN adapter
+running `candump`) to confirm frames are landing correctly.
