@@ -25,9 +25,9 @@ xdg-open index.html
 
 ## Deployment
 
-[`.github/workflows/deploy-pages.yml`](../../.github/workflows/deploy-pages.yml)
-at the repo root deploys this folder to GitHub Pages automatically on
-every push to `main` that touches it, at `https://<username>.github.io/<repo>/`.
+Not deployed yet — this is a plain static file, so it's ready to host on
+GitHub Pages (or Netlify/Vercel/Cloudflare Pages) whenever it's actually
+set up.
 
 ## What's in it
 
